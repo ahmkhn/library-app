@@ -38,6 +38,8 @@ function displayBooks(){
         paragraph=myLibrary[i].getPages();
         div.append(paragraph);
         paragraph=myLibrary[i].getRead();
+        div.dataset.indexNumber=i;
+        console.log(div.dataset.indexNumber); // to delete element later.
         div.append(paragraph);
         body.append(div);
     }
