@@ -17,26 +17,7 @@ function Book(title,pages,read){
     };
 }
 const myLibrary=[];
-function displayBooks(){
-    console.log("entered");
-    for(let i=0;i<myLibrary.length;i++)
-    {
-        console.log(myLibrary[i].getTitle());
-        const div = document.createElement("div");
-        const header=document.createElement("h1");
-        let paragraph=document.createElement("p")
-        header.textContent=myLibrary[i].getTitle();
-        div.append(header);
-        paragraph=myLibrary[i].getPages();
-        div.append(paragraph);
-        paragraph=myLibrary[i].getRead();
-        div.dataset.indexNumber=i;
-        console.log(div.dataset.indexNumber); // to delete element later.
-        div.append(paragraph);
-        div.style.border="2px solid red";
-        body.append(div);
-    }
-}
+
 function displayForm(){
     document.getElementById("myForm").style.display="block";
 }
@@ -56,5 +37,26 @@ function getDetails(){
         console.log(myLibrary);
     } catch (error) {
         console.error('Error creating object:', error.message);
+    }
+
+}
+function displayBooks(){
+    console.log("entered displaybook");
+    for(let i=0;i<myLibrary.length;i++)
+    {
+        console.log(myLibrary[i].getTitle());
+        const div = document.createElement("div");
+        const header=document.createElement("h1");
+        let paragraph=document.createElement("p")
+        header.textContent=myLibrary[i].getTitle();
+        div.append(header);
+        paragraph=myLibrary[i].getPages();
+        div.append(paragraph);
+        paragraph=myLibrary[i].getRead();
+        div.dataset.indexNumber=i;
+        console.log(div.dataset.indexNumber); // to delete element later.
+        div.append(paragraph);
+        div.style.border="2px solid red";
+        body.append(div);
     }
 }

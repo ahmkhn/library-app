@@ -8,7 +8,7 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-    <button onClick="displayForm()">Add Book (+)</button>
+    <button onClick="displayForm();">Add Book (+)</button>
     <div class="form-popup" id="myForm" style="display:none; border:3px solid red" >
         <form class="form-container" id="form2">
           <label for="title"><b>Book Title</b></label>
@@ -21,7 +21,7 @@
           <input type="checkbox" id="hasRead" name="hasRead">
           
 
-          <button type="submit" class="btn" onClick="getDetails()">Submit</button>
+          <button type="submit" class="btn" onClick="getDetails(); displayBooks();">Submit</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
         <script>
