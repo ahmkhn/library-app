@@ -17,14 +17,6 @@ function Book(title,pages,read){
     };
 }
 const myLibrary=[];
-const newBook = new Book("Diary of The Wimpy Kid",45,false);
-myLibrary.push(newBook);
-function addBookToLibrary(){
-    // ADD BOOK TO ARRAY.
-    x = document.createElement("FORM");
-    body.append(x);
-
-}
 function displayBooks(){
     console.log("entered");
     for(let i=0;i<myLibrary.length;i++)
@@ -41,6 +33,28 @@ function displayBooks(){
         div.dataset.indexNumber=i;
         console.log(div.dataset.indexNumber); // to delete element later.
         div.append(paragraph);
+        div.style.border="2px solid red";
         body.append(div);
+    }
+}
+function displayForm(){
+    document.getElementById("myForm").style.display="block";
+}
+function closeForm(){
+    document.getElementById("myForm").style.display = "none";
+}
+function getDetails(){
+    const titleValue =document.getElementById("titleText").value;
+    const pagesValue = document.getElementById("pagesText").value;
+    const checkbox = document.getElementById("hasRead");
+    const checkboxValue=checkbox.checked;
+
+    // create a book object & append to list.
+    try {
+        const newBook = new Book(titleValue,pagesValue,checkboxValue);
+        myLibrary.push(newBook);
+        console.log(myLibrary);
+    } catch (error) {
+        console.error('Error creating object:', error.message);
     }
 }
