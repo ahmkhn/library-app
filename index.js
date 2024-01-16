@@ -2,6 +2,7 @@
 const body = document.body
 const formElement = document.createElement("FORM");
 //body.append(div); 
+let counter =0;
 function Book(title,pages,read){
     this.title=title;
     this.pages=pages;
@@ -42,7 +43,7 @@ function getDetails(){
 }
 function displayBooks(){
     console.log("entered displaybook");
-    for(let i=0;i<myLibrary.length;i++)
+    for(let i=counter;i<myLibrary.length;i++)
     {
         console.log(myLibrary[i].getTitle());
         const div = document.createElement("div");
@@ -58,5 +59,6 @@ function displayBooks(){
         div.append(paragraph);
         div.style.border="2px solid red";
         body.append(div);
+        counter++;
     }
 }
